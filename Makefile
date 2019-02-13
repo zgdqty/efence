@@ -54,7 +54,7 @@ libefence.a: $(OBJECTS)
 	$(AR) crv libefence.a $(OBJECTS)
 
 libefence.so.0.0: $(OBJECTS)
-	gcc -g -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
+	$(CC) -g -shared -Wl,-soname,libefence.so.0 -o libefence.so.0.0 \
 		$(OBJECTS) -lpthread -lc 
 
 tstheap: libefence.a tstheap.o
